@@ -235,16 +235,16 @@
             <div class="output-section">
                 <h2 class="section-title">Response</h2>
                 <div id="output" class="output">
-Ready to test! Enter your data and click "Test API" 🚀
+Ready to test! Enter your data and click "Test API"
 
 API Features:
-✅ Separates odd/even numbers
-✅ Extracts alphabets (uppercase)
-✅ Finds special characters
-✅ Calculates sum of numbers
-✅ Creates alternating caps string
-✅ Handles multi-character strings
-✅ Error handling included
+- Separates odd/even numbers
+- Extracts alphabets (uppercase)
+- Finds special characters
+- Calculates sum of numbers
+- Creates alternating caps string
+- Handles multi-character strings
+- Error handling included
                 </div>
             </div>
         </div>
@@ -265,10 +265,10 @@ API Features:
             const output = document.getElementById('output');
             
             if (type === 'loading') {
-                output.innerHTML = '⏳ Loading...\n\nSending request to API...';
+                output.innerHTML = 'Loading...\n\nSending request to API...';
                 output.style.color = '#3498db';
             } else if (type === 'error') {
-                output.innerHTML = '❌ Error:\n\n' + content;
+                output.innerHTML = 'Error:\n\n' + content;
                 output.style.color = '#e74c3c';
             } else {
                 output.innerHTML = content;
@@ -302,16 +302,16 @@ API Features:
                 const result = await response.json();
                 
                 if (response.ok) {
-                    const formatted = `✅ SUCCESS - POST /bfhl
+                    const formatted = `SUCCESS - POST /bfhl
 
-🔗 Request URL: ${apiUrl}
-📥 Input Data: ${inputData}
+Request URL: ${apiUrl}
+Input Data: ${inputData}
 
-📊 Response:
+Response:
 ${JSON.stringify(result, null, 2)}
 
-📈 Analysis:
-• Status: ${result.is_success ? '✅ Success' : '❌ Failed'}
+Analysis:
+• Status: ${result.is_success ? 'Success' : 'Failed'}
 • User ID: ${result.user_id}
 • Email: ${result.email}
 • Roll Number: ${result.roll_number}
@@ -324,7 +324,7 @@ ${JSON.stringify(result, null, 2)}
                     
                     updateOutput(formatted);
                 } else {
-                    updateOutput(`❌ API Error (${response.status}):\n\n${JSON.stringify(result, null, 2)}`, 'error');
+                    updateOutput(`API Error (${response.status}):\n\n${JSON.stringify(result, null, 2)}`, 'error');
                 }
 
             } catch (error) {
@@ -345,17 +345,17 @@ ${JSON.stringify(result, null, 2)}
                 const result = await response.json();
                 
                 if (response.ok) {
-                    const formatted = `✅ SUCCESS - GET /bfhl
+                    const formatted = `SUCCESS - GET /bfhl
 
-🔗 Request URL: ${apiUrl}
-📊 Response:
+Request URL: ${apiUrl}
+Response:
 ${JSON.stringify(result, null, 2)}
 
 This endpoint returns the operation code for testing purposes.`;
                     
                     updateOutput(formatted);
                 } else {
-                    updateOutput(`❌ API Error (${response.status}):\n\n${JSON.stringify(result, null, 2)}`, 'error');
+                    updateOutput(`API Error (${response.status}):\n\n${JSON.stringify(result, null, 2)}`, 'error');
                 }
 
             } catch (error) {
