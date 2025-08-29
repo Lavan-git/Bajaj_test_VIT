@@ -129,8 +129,13 @@ app.get('/bfhl', (req, res) => {
     });
 });
 
-// Root endpoint
+// Root endpoint - serve the HTML UI
 app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/public/index.html');
+});
+
+// API status endpoint
+app.get('/status', (req, res) => {
     res.json({
         message: "BFHL API is running",
         endpoints: {
