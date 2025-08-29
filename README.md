@@ -102,4 +102,4 @@ This API is configured for deployment on multiple platforms:
 - **Name**: Lavan Gupta
 - **Roll Number**: 22BDS0047
 - **Email**: lavan.gupta2022@vitstudent.ac.in
-- **College**: VIT Bhopal
+- **College**: VIT Vellore
