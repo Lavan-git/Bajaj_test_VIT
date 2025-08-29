@@ -70,15 +70,32 @@ node test.js
 
 ## Deployment
 
-This API is configured for deployment on:
-- Vercel (vercel.json included)
-- Railway
-- Render
-- Any Node.js hosting platform
+This API is configured for deployment on multiple platforms:
 
-For Vercel deployment:
-1. Install Vercel CLI: `npm i -g vercel`
-2. Deploy: `vercel --prod`
+### Option 1: Vercel (Recommended)
+1. Go to [vercel.com](https://vercel.com) and sign up with GitHub
+2. Click "New Project" and import your GitHub repository
+3. Vercel will automatically detect and deploy using `vercel.json`
+4. Your API will be available at: `https://your-app-name.vercel.app/bfhl`
+
+### Option 2: Railway
+1. Go to [railway.app](https://railway.app) and sign up with GitHub
+2. Click "New Project" → "Deploy from GitHub repo"
+3. Select your repository and deploy
+4. Railway will use the `railway.json` configuration
+
+### Option 3: Render
+1. Go to [render.com](https://render.com) and sign up with GitHub
+2. Click "New" → "Web Service"
+3. Connect your GitHub repository
+4. Build Command: `npm install`
+5. Start Command: `npm start`
+
+### Option 4: Heroku
+1. Go to [heroku.com](https://heroku.com) and create an account
+2. Create a new app and connect to GitHub
+3. Enable automatic deploys from main branch
+4. Heroku will use the `Procfile` configuration
 
 ## Author
 
