@@ -120,9 +120,9 @@ testCases.forEach((testCase, index) => {
     
     const response = {
         is_success: true,
-        user_id: "lavan_kumar_29082003",
-        email: "lavan.kumar2021@vitbhopal.ac.in",
-        roll_number: "21BCT0254",
+        user_id: "lavan_gupta_29082003",
+        email: "lavan.gupta2022@vitstudent.ac.in",
+        roll_number: "22BDS0047",
         odd_numbers: result.oddNumbers,
         even_numbers: result.evenNumbers,
         alphabets: result.alphabets,

@@ -49,9 +49,9 @@ The server will run on `http://localhost:3000`
 ```json
 {
   "is_success": true,
-  "user_id": "lavan_kumar_29082003",
-  "email": "lavan.kumar2021@vitbhopal.ac.in",
-  "roll_number": "21BCT0254",
+  "user_id": "lavan_gupta_29082003",
+  "email": "lavan.gupta2022@vitstudent.ac.in",
+  "roll_number": "22BDS0047",
   "odd_numbers": ["1"],
   "even_numbers": ["334","4"],
   "alphabets": ["A","R"],
@@ -99,7 +99,7 @@ This API is configured for deployment on multiple platforms:
 
 ## Author
 
-- **Name**: Lavan Kumar
-- **Roll Number**: 21BCT0254
-- **Email**: lavan.kumar2021@vitbhopal.ac.in
+- **Name**: Lavan Gupta
+- **Roll Number**: 22BDS0047
+- **Email**: lavan.gupta2022@vitstudent.ac.in
 - **College**: VIT Bhopal

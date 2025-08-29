@@ -100,9 +100,9 @@ app.post('/bfhl', (req, res) => {
         // Response with required format
         const response = {
             is_success: true,
-            user_id: "lavan_kumar_29082003", // Replace with your actual details
-            email: "lavan.kumar2021@vitbhopal.ac.in", // Replace with your actual email
-            roll_number: "21BCT0254", // Replace with your actual roll number
+            user_id: "lavan_gupta_29082003", // Replace with your actual details
+            email: "lavan.gupta2022@vitstudent.ac.in", // Replace with your actual email
+            roll_number: "22BDS0047", // Replace with your actual roll number
             odd_numbers: result.oddNumbers,
             even_numbers: result.evenNumbers,
             alphabets: result.alphabets,
