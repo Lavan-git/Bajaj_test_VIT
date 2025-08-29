@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BFHL API - VIT Assignment</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            padding: 30px;
+        }
+
+        .input-section, .output-section {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            border: 2px solid #e9ecef;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #495057;
+        }
+
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #dee2e6;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="text"]:focus, textarea:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+            font-family: 'Courier New', monospace;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .examples {
+            margin-top: 20px;
+        }
+
+        .example-btn {
+            background: linear-gradient(135deg, #27ae60, #229954);
+            padding: 10px 15px;
+            font-size: 0.9rem;
+            margin: 5px;
+            display: inline-block;
+        }
+
+        .output {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            min-height: 200px;
+            max-height: 500px;
+            overflow-y: auto;
+        }
+
+        .loading {
+            text-align: center;
+            color: #3498db;
+        }
+
+        .error {
+            color: #e74c3c;
+            background: #fadbd8;
+            border: 1px solid #e74c3c;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .success {
+            color: #27ae60;
+            background: #d5f4e6;
+            border: 1px solid #27ae60;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .user-info {
+            background: linear-gradient(135deg, #8e44ad, #9b59b6);
+            color: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+
+        .user-info h3 {
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 BFHL API Tester</h1>
+            <p>VIT Full Stack Assignment - Array Processing API</p>
+        </div>
+
+        <div class="user-info">
+            <h3>📋 Student Information</h3>
+            <p><strong>Name:</strong> Lavan Kumar</p>
+            <p><strong>Roll Number:</strong> 21BCT0254</p>
+            <p><strong>Email:</strong> lavan.kumar2021@vitbhopal.ac.in</p>
+            <p><strong>College:</strong> VIT Bhopal</p>
+        </div>
+
+        <div class="main-content">
+            <div class="input-section">
+                <h2 class="section-title">🔧 Input</h2>
+                
+                <div class="input-group">
+                    <label for="apiUrl">API Endpoint:</label>
+                    <input type="text" id="apiUrl" value="http://localhost:3000/bfhl" placeholder="Enter API URL">
+                </div>
+
+                <div class="input-group">
+                    <label for="inputData">Input Data (JSON Array):</label>
+                    <textarea id="inputData" placeholder='["a","1","334","4","R","$"]'>["a","1","334","4","R","$"]</textarea>
+                </div>
+
+                <button class="btn" onclick="testAPI()">🔍 Test API</button>
+                <button class="btn" onclick="testGET()">📊 Test GET Endpoint</button>
+
+                <div class="examples">
+                    <h4>📝 Quick Examples:</h4>
+                    <button class="btn example-btn" onclick="loadExample(1)">Example A</button>
+                    <button class="btn example-btn" onclick="loadExample(2)">Example B</button>
+                    <button class="btn example-btn" onclick="loadExample(3)">Example C</button>
+                </div>
+            </div>
+
+            <div class="output-section">
+                <h2 class="section-title">📤 Response</h2>
+                <div id="output" class="output">
+Ready to test! Enter your data and click "Test API" 🚀
+
+API Features:
+✅ Separates odd/even numbers
+✅ Extracts alphabets (uppercase)
+✅ Finds special characters
+✅ Calculates sum of numbers
+✅ Creates alternating caps string
+✅ Handles multi-character strings
+✅ Error handling included
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const examples = {
+            1: '["a","1","334","4","R", "$"]',
+            2: '["2","a", "y", "4", "&", "-", "*", "5","92","b"]',
+            3: '["A","ABcD","DOE"]'
+        };
+
+        function loadExample(num) {
+            document.getElementById('inputData').value = examples[num];
+        }
+
+        function updateOutput(content, type = 'normal') {
+            const output = document.getElementById('output');
+            
+            if (type === 'loading') {
+                output.innerHTML = '⏳ Loading...\n\nSending request to API...';
+                output.style.color = '#3498db';
+            } else if (type === 'error') {
+                output.innerHTML = '❌ Error:\n\n' + content;
+                output.style.color = '#e74c3c';
+            } else {
+                output.innerHTML = content;
+                output.style.color = '#ecf0f1';
+            }
+        }
+
+        async function testAPI() {
+            const apiUrl = document.getElementById('apiUrl').value;
+            const inputData = document.getElementById('inputData').value;
+
+            try {
+                updateOutput('', 'loading');
+
+                // Parse input data
+                let dataArray;
+                try {
+                    dataArray = JSON.parse(inputData);
+                } catch (e) {
+                    throw new Error('Invalid JSON format in input data');
+                }
+
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ data: dataArray })
+                });
+
+                const result = await response.json();
+                
+                if (response.ok) {
+                    const formatted = `✅ SUCCESS - POST /bfhl
+
+🔗 Request URL: ${apiUrl}
+📥 Input Data: ${inputData}
+
+📊 Response:
+${JSON.stringify(result, null, 2)}
+
+📈 Analysis:
+• Status: ${result.is_success ? '✅ Success' : '❌ Failed'}
+• User ID: ${result.user_id}
+• Email: ${result.email}
+• Roll Number: ${result.roll_number}
+• Odd Numbers: [${result.odd_numbers?.join(', ')}]
+• Even Numbers: [${result.even_numbers?.join(', ')}]
+• Alphabets: [${result.alphabets?.join(', ')}]
+• Special Chars: [${result.special_characters?.join(', ')}]
+• Sum: ${result.sum}
+• Concat String: "${result.concat_string}"`;
+                    
+                    updateOutput(formatted);
+                } else {
+                    updateOutput(`❌ API Error (${response.status}):\n\n${JSON.stringify(result, null, 2)}`, 'error');
+                }
+
+            } catch (error) {
+                updateOutput(`Network/Connection Error:\n\n${error.message}\n\nMake sure the API server is running on the specified URL.`, 'error');
+            }
+        }
+
+        async function testGET() {
+            const apiUrl = document.getElementById('apiUrl').value;
+
+            try {
+                updateOutput('', 'loading');
+
+                const response = await fetch(apiUrl, {
+                    method: 'GET'
+                });
+
+                const result = await response.json();
+                
+                if (response.ok) {
+                    const formatted = `✅ SUCCESS - GET /bfhl
+
+🔗 Request URL: ${apiUrl}
+📊 Response:
+${JSON.stringify(result, null, 2)}
+
+This endpoint returns the operation code for testing purposes.`;
+                    
+                    updateOutput(formatted);
+                } else {
+                    updateOutput(`❌ API Error (${response.status}):\n\n${JSON.stringify(result, null, 2)}`, 'error');
+                }
+
+            } catch (error) {
+                updateOutput(`Network/Connection Error:\n\n${error.message}\n\nMake sure the API server is running on the specified URL.`, 'error');
+            }
+        }
+
+        // Auto-update URL when page loads
+        window.onload = function() {
+            const currentUrl = window.location.href.replace(/\/[^\/]*$/, '');
+            if (currentUrl.includes('localhost') || currentUrl.includes('127.0.0.1')) {
+                document.getElementById('apiUrl').value = currentUrl + '/bfhl';
+            }
+        };
+    </script>
+</body>
+</html>
